@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Job/2022年面试记录.md",
+                "file": "Job/Android面试题-Kotlin&设计者模式&第三方源码篇.md",
                 "mode": "preview",
-                "source": true
+                "source": false
               },
               "icon": "lucide-file",
-              "title": "2022年面试记录"
+              "title": "Android面试题-Kotlin&设计者模式&第三方源码篇"
             }
           }
         ]
@@ -112,11 +112,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "Job/2022年面试记录.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "出链"
+              "title": "2022年面试记录 的出链列表"
             }
           },
           {
@@ -140,12 +141,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "followCursor": false,
+                "file": "Job/Android面试题-Kotlin&设计者模式&第三方源码篇.md",
+                "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "大纲"
+              "title": "Android面试题-Kotlin&设计者模式&第三方源码篇 的大纲"
             }
           },
           {
@@ -159,7 +161,7 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -177,8 +179,20 @@
       "copilot:Open Copilot Chat": false
     }
   },
-  "active": "6d3a85fbdf14a3ce",
+  "active": "bc8366a32d6a4413",
   "lastOpenFiles": [
+    "Job/Android面试题-Java基础&多线程&集合篇.md",
+    "Job/Android面试题-Android基础篇.md",
+    "Job/Android面试题-网络&算法&项目篇.md",
+    "Job/简历-郭杨-Android-9年.md",
+    "Job/面试技术点总结.md",
+    "Job/大厂高频面试题.md",
+    "Job/2022年面试记录.md",
+    "Job/Android面试题-Kotlin&设计者模式&第三方源码篇.md",
+    "share/实用的小工具(不断更).md",
+    "share/腾讯Mars-xlog日志使用指南.md",
+    "share/一个Android渣渣的面经分享.md",
+    "share",
     "未命名.canvas",
     "2022年面试记录.md"
   ]
