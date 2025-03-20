@@ -1,0 +1,78 @@
+# Git规范化提交记录
+
+根据仓库中的[Git提交规范](./Git提交规范.md)，以下是对目前提交历史的规范化建议：
+
+## 当前提交历史
+
+```
+65a088a 添加提示词模板，包含10种常用提示词模板集合
+bf57604 docs: 添加Git提交规范文档
+1ce6838 Refactor resume layout and Obsidian settings
+9bd49bf Update resume and Android interview notes with refined content and formatting
+5ce8f6b Update Obsidian workspace and appearance settings, and modify job-related documents
+715b651 first commit
+```
+
+## 规范化后的提交信息
+
+```
+docs: 添加提示词模板集合，包含10种常用模板
+docs: 添加Git提交规范文档
+refactor: 重构简历布局和Obsidian设置
+docs: 更新简历和Android面试笔记内容与格式
+chore: 更新Obsidian工作区和外观设置，修改工作相关文档
+chore: 初始提交
+```
+
+## 操作步骤
+
+如果要修改已有的提交历史并推送到远程仓库，可以使用以下命令：
+
+```bash
+# 交互式变基，修改最近6条提交
+git rebase -i HEAD~6
+
+# 在编辑器中将需要修改的提交前的"pick"改为"reword"
+# 保存并关闭，然后在随后弹出的编辑器中修改提交信息
+
+# 强制推送到远程仓库（谨慎使用，确保没有其他协作者在同一分支工作）
+git push --force-with-lease origin main
+```
+
+⚠️ **注意**: 强制推送会重写远程仓库的历史记录，如果有其他协作者，请确保他们了解这一变更。
+
+## 未来提交规范
+
+根据[Git提交规范](./Git提交规范.md)，未来的提交应遵循以下格式：
+
+```
+<type>[optional scope]: <description>
+
+[optional body]
+
+[optional footer(s)]
+```
+
+常用的类型（type）包括：
+
+- **feat**: 新增功能
+- **fix**: 修复Bug
+- **docs**: 文档变更
+- **style**: 代码格式调整（不影响代码功能）
+- **refactor**: 代码重构
+- **perf**: 性能优化
+- **test**: 添加或修改测试代码
+- **build**: 构建系统或外部依赖项变更
+- **ci**: CI配置变更
+- **chore**: 其他不修改源代码或测试文件的变更
+
+示例：
+
+```
+feat(user): 添加用户注册功能
+
+实现了用户注册表单和后端API集成
+新增邮箱验证功能
+
+Closes #123
+``` 
