@@ -7,19 +7,186 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <meta name="description" content="郭杨的技术笔记库 - Android 开发、架构设计、MCP、AI工具等技术知识沉淀">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@5.0.0-rc.4/dist/themes/core.min.css" />
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@5.0.0-rc.4/dist/themes/addons/vue.min.css"
+    data-group="addon" data-sheet="vue" />
+  <!-- 手动暗黑模式开关样式 -->
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-dark-mode@latest/dist/style.min.css">
+  <!-- 侧边栏折叠样式 -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/sidebar.min.css" />
+  <style>
+    /* 修复侧边栏靠左问题内容留白 */
+    .sidebar-nav,
+    .app-name,
+    .sidebar>h1 {
+      padding-left: 25px !important;
+      padding-right: 20px !important;
+    }
+
+    /* 优化暗黑模式的整体高级感 (彻底重写各个组件的深色适配) */
+    body.dark {
+      --theme-color: #58a6ff;
+      background-color: #0d1117 !important;
+      color: #c9d1d9 !important;
+    }
+
+    body.dark .sidebar,
+    body.dark .sidebar-toggle {
+      background-color: #161b22 !important;
+      border-right: 1px solid #30363d;
+    }
+
+    body.dark .markdown-section {
+      color: #c9d1d9 !important;
+    }
+
+    body.dark .markdown-section h1,
+    body.dark .markdown-section h2,
+    body.dark .markdown-section h3,
+    body.dark .markdown-section h4,
+    body.dark .markdown-section p,
+    body.dark .markdown-section ul,
+    body.dark .markdown-section li {
+      color: #c9d1d9 !important;
+    }
+
+    /* 修复暗黑模式下行内代码块白底问题 */
+    body.dark .markdown-section code {
+      color: #ff7b72 !important;
+      background-color: #1f2428 !important;
+    }
+
+    body.dark .markdown-section pre {
+      background-color: #1f2428 !important;
+      border: 1px solid #30363d !important;
+    }
+
+    body.dark .markdown-section pre>code {
+      color: #e6edf3 !important;
+      background-color: transparent !important;
+    }
+
+    body.dark .markdown-section table tr,
+    body.dark .markdown-section table th,
+    body.dark .markdown-section table td {
+      border-color: #30363d !important;
+      background-color: transparent !important;
+      color: #c9d1d9 !important;
+    }
+
+    body.dark .markdown-section table tr:nth-child(2n) {
+      background-color: #161b22 !important;
+    }
+
+    body.dark .markdown-section blockquote {
+      border-left: 4px solid #30363d;
+      color: #8b949e !important;
+    }
+
+    /* 彻底修复移动端排版遮挡与溢出问题 */
+    @media screen and (max-width: 768px) {
+      body, html {
+        overflow-x: hidden !important;
+      }
+      .content, .markdown-section {
+        box-sizing: border-box !important;
+        width: 100% !important;
+        max-width: 100% !important;
+      }
+      .markdown-section {
+        /* 重点：左侧留出 45px 避开默认折叠把手，避免文字被压在下面或裁切 */
+        padding: 20px 15px 20px 45px !important; 
+        margin: 0 !important;
+      }
+
+      .markdown-section p,
+      .markdown-section li,
+      .markdown-section h1,
+      .markdown-section h2,
+      .markdown-section h3,
+      .markdown-section h4 {
+        word-wrap: break-word !important;
+        overflow-wrap: break-word !important;
+      }
+
+      .markdown-section pre,
+      .markdown-section table,
+      .mermaid {
+        box-sizing: border-box !important;
+        max-width: 100% !important;
+        overflow-x: auto !important;
+        /* 确保超宽表格和图表可以横向滚动，不撑爆屏幕 */
+        -webkit-overflow-scrolling: touch;
+      }
+
+      #back-to-top {
+        right: 15px;
+        bottom: 25px;
+        width: 38px;
+        height: 38px;
+        font-size: 16px;
+      }
+    }
+
+    /* 返回顶部按钮的现代化样式 */
+    #back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: var(--theme-color, #42b983);
+      color: white;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+      opacity: 0;
+      transition: opacity 0.3s, transform 0.3s;
+      pointer-events: none;
+      z-index: 999;
+      font-size: 20px;
+    }
+
+    #back-to-top.show {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+
+    #back-to-top:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+    }
+  </style>
 </head>
 
 <body>
   <div id="app"></div>
   <script>
     window.$docsify = {
-      themeColor: "#42b983", // this is the default 'vue' color
       name: '郭杨的技术笔记库',
       repo: 'https://github.com/guoyanggmail/guoyangnote',
+      darkMode: {
+        dark: {
+          background: '#0d1117',
+          toggleBtnBg: '#30363d',
+          textColor: '#c9d1d9'
+        },
+        light: {
+          background: 'white',
+          toggleBtnBg: 'var(--theme-color)',
+          textColor: 'var(--theme-color)'
+        }
+      },
       loadSidebar: true,
       loadNavbar: true,
+      alias: {
+        '/.*/_sidebar.md': '/_sidebar.md',
+        '/.*/_navbar.md': '/_navbar.md'
+      },
       subMaxLevel: 3,
       auto2top: true,
       search: {
@@ -33,17 +200,78 @@
         fontsize: '0.9em',
         color: 'rgb(90,90,90)',
         language: 'chinese'
-      }
+      },
+      pagination: {
+        previousText: '上一篇',
+        nextText: '下一篇',
+        crossChapter: true,
+        crossChapterText: true,
+      },
+      plugins: [
+        function (hook, vm) {
+          hook.beforeEach(function (html) {
+            var url = 'https://github.com/guoyanggmail/guoyangnote/blob/master/docs/' + vm.route.file;
+            var editHtml = '[:memo: 在 GitHub 上编辑此页](' + url + ')\n';
+            return html + '\n\n----\n' + editHtml;
+          })
+        }
+      ]
     }
   </script>
-  <!-- Docsify v4 -->
-  <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
-  <script src="//cdn.jsdelivr.net/npm/docsify@4/lib/plugins/search.min.js"></script>
+  <!-- Docsify v5 -->
+  <script src="//cdn.jsdelivr.net/npm/docsify@5.0.0-rc.4/dist/docsify.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify@5.0.0-rc.4/dist/plugins/search.min.js"></script>
   <script src="//unpkg.com/docsify-count/dist/countable.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-kotlin.js"></script>
   <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-kotlin.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify-copy-code/dist/docsify-copy-code.min.js"></script>
+
+  <!-- 新增的 5 大功能加强插件 -->
+  <script src="//cdn.jsdelivr.net/npm/docsify@5.0.0-rc.4/dist/plugins/zoom-image.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify-tabs@1"></script>
+  <script src="//unpkg.com/docsify-pagination/dist/docsify-pagination.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/docsify-sidebar-collapse.min.js"></script>
+  <!-- 手动暗黑模式开关 (替换掉了系统强制控制的 core-dark) -->
   <script src="//cdn.jsdelivr.net/npm/docsify-dark-mode@latest/dist/index.min.js"></script>
+
+  <!-- 图表渲染核心：Mermaid (支持画流程图、时序图、架构图、思维导图等) -->
+  <script src="//cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <script src="//unpkg.com/docsify-mermaid@2.0.1/dist/docsify-mermaid.js"></script>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: 'default'
+    });
+  </script>
+
+  <!-- 注入返回顶部功能组件 -->
+  <div id="back-to-top" title="返回顶部">🚀</div>
+  <script>
+    var backToTop = document.getElementById('back-to-top');
+
+    // 使用事件捕获机制，确保无论是 window 还是内部 main 元素的滚动都能被监听到
+    document.addEventListener('scroll', function (e) {
+      var top = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop || 0;
+      if (e.target && e.target.scrollTop) {
+        top = Math.max(top, e.target.scrollTop);
+      }
+
+      if (top > 300) {
+        backToTop.classList.add('show');
+      } else {
+        backToTop.classList.remove('show');
+      }
+    }, true);
+
+    // 点击平滑滚动回顶部
+    backToTop.addEventListener('click', function () {
+      // 尝试滚动所有可能的容器
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      var main = document.querySelector('main');
+      if (main) main.scrollTo({ top: 0, behavior: 'smooth' });
+      var content = document.querySelector('.content');
+      if (content) content.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
 </body>
 
 </html>
