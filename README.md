@@ -1,69 +1,74 @@
-# 郭杨的技术笔记库
+# 郭杨的技术笔记库 📚
 
-这是我的个人技术笔记和学习记录仓库，涵盖了Android开发、架构设计、工具推荐等多个方面的内容。
+> 10+ 年 Android 开发的知识沉淀 —— 技术学习、架构思考、求职经验、工具探索
+
+[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-在线访问-blue?logo=github)](https://guoyanggmail.github.io/guoyangnote/)
+
+## 🚀 在线访问
+
+📌 **[https://guoyanggmail.github.io/guoyangnote/](https://guoyanggmail.github.io/guoyangnote/)**
+
+## 🛠️ 本地运行（基于 Docsify）
+
+本项目使用 [Docsify](https://docsify.js.org/) 构建，**无需编译**，所有笔记均为 Markdown 文件，在浏览器端实时渲染。
+
+### 1. 安装 docsify-cli
+
+```bash
+npm i docsify-cli -g
+```
+
+### 2. 克隆项目
+
+```bash
+git clone https://github.com/guoyanggmail/guoyangnote.git
+cd guoyangnote
+```
+
+### 3. 启动本地预览
+
+```bash
+docsify serve docs
+```
+
+访问 [http://localhost:3000](http://localhost:3000) 即可预览效果。
+
+## ✏️ 如何添加新笔记
+
+1. 在 `docs/` 对应分类目录下新建 `.md` 文件，例如：
+   ```
+   docs/技术学习/Android/自定义View原理.md
+   ```
+
+2. 在 `docs/_sidebar.md` 中添加对应链接：
+   ```markdown
+   - 技术学习
+     - Android
+       - [自定义View原理](/技术学习/Android/自定义View原理)
+   ```
+
+3. （可选）在 `docs/_navbar.md` 顶部导航中也加入链接。
+
+4. 刷新浏览器即可看到新内容，**无需重启服务**。
 
 ## 📁 项目结构
 
 ```
 guoyangnote/
-├── 📚 技术学习/           # 技术相关学习笔记
-│   ├── Android/          # Android开发相关
-│   ├── Docker/           # Docker容器技术
-│   ├── Git/              # Git版本控制
-│   └── MCP/              # MCP技术研究
-├── 💼 求职相关/           # 面试和求职资料
-├── 🔧 架构设计/           # 系统架构设计方案
-├── 🛠️ 工具推荐/           # 实用工具推荐
-├── 📝 经验分享/           # 技术经验分享
-├── 📋 模板工具/           # 各类模板和工具
-└── 📖 README.md          # 项目说明文档
+├── README.md              # 本文件（GitHub 项目介绍）
+└── docs/                  # 网站根目录
+    ├── index.html         # Docsify 配置入口
+    ├── README.md          # 网站首页
+    ├── _sidebar.md        # 左侧导航
+    ├── _navbar.md         # 顶部导航
+    ├── 求职相关/          # 面试题、简历等
+    └── 模板工具/          # 提示词模板等
 ```
 
-## 🎯 主要内容
+## 📬 联系我
 
-### 📚 技术学习
-- **Android开发**：面试题、技术点总结、实战经验
-- **Docker**：容器化技术学习指南
-- **Git**：版本控制规范和最佳实践
-- **MCP**：模型控制协议技术研究
-
-### 💼 求职相关
-- Android开发面试题集合
-- 简历模板和面试记录
-- 大厂面试经验总结
-
-### 🔧 架构设计
-- 消息处理架构设计方案
-- 红点系统设计方案
-
-### 🛠️ 工具推荐
-- Mac开发工具推荐
-- 实用小工具收集
-
-### 📝 经验分享
-- Android WebView优化
-- 腾讯Mars-xlog使用指南
-- 个人面试经验分享
-
-### 📋 模板工具
-- 提示词模板集合
-- 常用模板工具
-
-## 🚀 如何使用
-
-1. **浏览学习**：根据目录结构找到感兴趣的技术领域
-2. **面试准备**：查看求职相关目录下的面试题和经验
-3. **工具使用**：参考工具推荐目录下的实用工具
-4. **架构参考**：学习架构设计目录下的系统设计方案
-
-## 📝 贡献说明
-
-这是个人学习笔记仓库，内容会持续更新。如果您发现任何错误或有改进建议，欢迎提出。
-
-## 📄 许可证
-
-本项目仅供学习交流使用。
+- GitHub：[@guoyanggmail](https://github.com/guoyanggmail)
 
 ---
 
-*最后更新：2024年7月* 
+> 笔记持续更新中，⭐ Star 收藏，欢迎关注！
