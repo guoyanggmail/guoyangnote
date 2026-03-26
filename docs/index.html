@@ -85,17 +85,22 @@
 
     /* 彻底修复移动端排版遮挡与溢出问题 */
     @media screen and (max-width: 768px) {
-      body, html {
+
+      body,
+      html {
         overflow-x: hidden !important;
       }
-      .content, .markdown-section {
+
+      .content,
+      .markdown-section {
         box-sizing: border-box !important;
         width: 100% !important;
         max-width: 100% !important;
       }
+
       .markdown-section {
         /* 重点：左侧留出 45px 避开默认折叠把手，避免文字被压在下面或裁切 */
-        padding: 20px 15px 20px 45px !important; 
+        padding: 20px 15px 20px 45px !important;
         margin: 0 !important;
       }
 
