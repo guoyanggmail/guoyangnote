@@ -1,7 +1,7 @@
-- 开始
-  - [首页](/README)
+- [首页](/README)
 - 求职相关
   - [高级工程师面试题精选](/求职相关/高级工程师面试题精选)
+  - [Android面试题-Kotlin](/求职相关/Android面试题-Kotlin)
   - [Android面试题-Android基础篇](/求职相关/Android面试题-Android基础篇)
   - [Android面试题-Java基础&多线程&集合篇](/求职相关/Android面试题-Java基础&多线程&集合篇)
   - [Android面试题-Kotlin&设计者模式&第三方源码篇](/求职相关/Android面试题-Kotlin&设计者模式&第三方源码篇)
@@ -9,3 +9,9 @@
   - [简历-郭杨-Android-10年](/求职相关/简历-郭杨-Android-10年)
 - 模板工具
   - [提示词模板](/模板工具/提示词模板)
+- AI
+  - [什么是Agent兵团](/AI/什么是Agent兵团)
+  - [一个视频搞懂OpenClaw](/AI/一个视频搞懂OpenClaw)
+  - [AI时代黑话大全](/AI/AI时代黑话大全)
+  - [AI时代名词诈骗](/AI/AI时代名词诈骗)
+
