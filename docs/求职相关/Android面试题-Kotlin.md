@@ -415,6 +415,14 @@ sequenceDiagram
 |**是否会并发**|不会并发|会并发|
 |**是否会取消**|会取消|会取消|
 
+### State 和 Event
+
+|概念|特点|适用场景|推荐工具|
+|---|---|---|---|
+|**State（状态）**|持久的、可重复获取|用户信息、列表数据、UI 状态|LiveData / StateFlow|
+|**Event（事件）**|一次性的、消费后失效|显示 Toast、导航跳转|Channel / SharedFlow|
+
+
 ### Flow 的操作符
 
 `Flow` 提供了丰富的操作符，类似 `RxJava` 但更简洁。
@@ -430,3 +438,10 @@ sequenceDiagram
 ### Flow 和 LiveData 的区别
 
 `LiveData` 是 `Android Jetpack` 的组件，生命周期感知，但功能有限。`Flow` 更灵活，操作符更丰富，但不是生命周期感知的(需要手动管理生命周期，比如`LifecycleScope`)。在实际开发中，通常在 `ViewModel` 中用 `Flow` 处理数据流，然后转换成 `StateFlow` 供 `UI` 观察。也可以用 `asLiveData()` 把 `Flow` 转成 `LiveData`。
+
+|特性|LiveData|StateFlow|
+|---|---|---|
+|**粘性行为**|✅ 新订阅者收到最后的值|✅ 新订阅者收到当前值|
+|**生命周期感知**|自动感知，自动启停|需要手动配合 repeatOnLifecycle|
+|**初始值**|可选（可以没有初始值）|必须（必须有初始值）|
+|**相同值更新会通知观察者**|默认不通知（相同值会被过滤）|线程安全|主线程自动切换|需要手动处理|背压处理|无|有（conflate 策略）|
