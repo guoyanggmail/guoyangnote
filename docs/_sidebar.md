@@ -1,13 +1,11 @@
 - [首页](/README)
 - 求职相关
+  - [10年高级Android开发面试冲刺通关指南](/求职相关/10年高级Android开发面试冲刺通关指南)
   - [高级工程师面试题精选](/求职相关/高级工程师面试题精选)
   - [Android面试题-Android](/求职相关/Android面试题-Android)
   - [Android面试题-Kotlin](/求职相关/Android面试题-Kotlin)
-  - [Android面试题-Android基础篇](/求职相关/Android面试题-Android基础篇)
-  - [Android面试题-Java基础&多线程&集合篇](/求职相关/Android面试题-Java基础&多线程&集合篇)
-  - [Android面试题-Kotlin&设计者模式&第三方源码篇](/求职相关/Android面试题-Kotlin&设计者模式&第三方源码篇)
-  - [Android面试题-网络&算法&项目篇](/求职相关/Android面试题-网络&算法&项目篇)
-  - [简历-郭杨-Android-10年](/求职相关/简历-郭杨-Android-10年)
+  - [Android面试题-Java](/求职相关/Android面试题-Java)
+  - [简历-郭杨-Android-9年](/求职相关/简历-郭杨-Android-9年)
 - 模板工具
   - [提示词模板](/模板工具/提示词模板)
 - AI
